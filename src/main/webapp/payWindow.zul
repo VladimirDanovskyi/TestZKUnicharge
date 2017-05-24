@@ -1,0 +1,77 @@
+<zk> <!--"demoZK.controller.SendController">-->
+	<window
+			apply="org.zkoss.bind.BindComposer"
+			viewModel="@id('vm')@init('demoZK.mvm.MyViewModel')"
+			validationMessages="@id('vmsgs')"
+			form="@id('fx') @load(vm.saleData) @save(vm.saleData, before='submit')">
+
+
+
+		<grid vflex="1">
+			<columns>
+				<column  width="150px" />
+				<column  />
+			</columns>
+			<rows>
+				<row>Card Number:
+
+					<textbox  id="cardNumber"  width="150px" value="@bind(fx.accountNumber)" constraint="no empty: {Sorry, no empty allowed}, /.{0,20}$/:  Not more than twenty characters " />
+				</row>
+				<row>
+					Exp Date:
+					<textbox id="expDate"  width="150px" value="@bind(fx.acountAccessory)"  constraint="no empty: {Sorry, no empty allowed}, /.{0,10}$/:Not more than ten characters" />
+				</row>
+				<row>
+					CSC:
+					<textbox id="csc"  width="150px" value="@bind(fx.csc)" constraint="no empty: {Sorry, no empty allowed}, /.{0,4}$/:Not more than four characters" />
+				</row>
+				<row>
+					Amount:<!--Amount Holder Name Street City State ZipCode
+-->
+					<intbox id="amount" value="@bind(fx.amount)" constraint="no negative,no zero,no empty"
+							width="150px" />
+				</row>
+
+				<row>
+					Holder Name:
+					<textbox id="holderName" width="150px" value="@bind(fx.holderName)" constraint="/.{0,150}$/:Not more than 150 characters"  />
+				</row>
+				<row>
+					Street:
+					<textbox  id ="street" width="150px" value="@bind(fx.street)" constraint="/.{0,128}$/:Not more than 128 characters"  />
+				</row>
+				<row>
+					City:
+					<textbox id="city" width="150px" value="@bind(fx.city)" constraint="/.{0,50}$/:Not more than fifty characters"  />
+				</row>
+				<row>
+					State:
+					<textbox id="state" width="150px" value="@bind(fx.state)" constraint="/.{0,2}$/:Not more than two characters"  />
+				</row>
+				<row>
+					Zip code :
+					<textbox id="zipCode" value="@bind(fx.zipCode)"  constraint="/.{0,15}$/:Not more than fifteen characters"
+							 width="150px" />
+
+				</row>
+
+			</rows>
+		</grid>
+		<grid>
+			<columns>
+				<column  width="150px" />
+				<column  />
+			</columns>
+			<rows>
+		<row>
+			Server response:
+			<textbox width="100%" rows="5" value="@load(vm.report.response)"/>
+		</row>
+			</rows>
+		</grid>
+		<button label="Sale"  id="saleBtn"
+				width="100px" height="30px" onClick="@command('submit')" />
+
+
+	</window>
+</zk>

@@ -1,0 +1,12 @@
+<zk> <!--"demoZK.controller.SendController">-->
+	<window
+			id="modalDialog" title="Welcome to Payment" border="normal"
+			apply="demoZK.controller.ModaldialogController"
+			action="show: slideDown;hide: slideUp">
+		<vlayout>
+			<div>
+				<button id="welcome" hflex="1" label="Click the button to make a payment"/>
+			</div>
+		</vlayout>
+	</window>
+</zk>

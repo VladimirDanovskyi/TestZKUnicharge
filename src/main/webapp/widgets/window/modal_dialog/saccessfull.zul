@@ -1,0 +1,17 @@
+<window id="modalDialog" title="Payment" border="normal" width="460px"
+		apply="demoZK.controller.ModaldialogController"
+		position="center,center" closable="true"
+		action="show: slideDown;hide: slideUp">
+	<vlayout>
+		<grid>
+			<rows>
+				<row>
+					Payment successful
+				</row>
+			</rows>
+		</grid>
+		<div>
+		<button id="return" hflex="1" label="return"/>
+	     </div>
+	</vlayout>
+</window>
